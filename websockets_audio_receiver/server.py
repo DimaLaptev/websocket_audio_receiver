@@ -181,7 +181,7 @@ class Session:
                 self.release_lock(self.lock1)
 
             # Ждем обработки данных
-            if not self.data_processed.wait(timeout=0.5):  # Уменьшаем таймаут для ускорения
+            if not self.data_processed.wait(timeout=1.0):  # Увеличиваем таймаут с 0.5 до 1.0 секунд
                 await websocket.send_json({"error": "Data processing timeout"})
                 return
 

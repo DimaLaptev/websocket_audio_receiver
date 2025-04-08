@@ -7,122 +7,167 @@ import numpy as np
 from concurrent.futures import ThreadPoolExecutor
 
 # Настройка логирования
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+)
 logger = logging.getLogger(__name__)
 
-def run_receiver(buffer1_name: str, buffer2_name: str, buffer_size: int, data_ready: Event, data_processed: Event, receiver_ready: Event):
+def run_receiver(input_buffer_name, output_buffer_name, buffer_size, data_ready_event, processing_done_event, receiver_ready_event=None, stop_event=None):
     """
-    Запускает процесс аудио-приёмника с оптимизированной обработкой данных.
+    Функция для запуска аудио-приемника в отдельном процессе.
     
     Args:
-        buffer1_name (str): Имя shared memory буфера для входных данных
-        buffer2_name (str): Имя shared memory буфера для выходных данных
-        buffer_size (int): Размер буферов
-        data_ready (Event): Событие, сигнализирующее о готовности данных
-        data_processed (Event): Событие, сигнализирующее об окончании обработки
-        receiver_ready (Event): Событие, сигнализирующее о готовности приёмника
+        input_buffer_name (str): Имя разделяемого входного буфера в памяти
+        output_buffer_name (str): Имя разделяемого выходного буфера в памяти
+        buffer_size (int): Размер буфера
+        data_ready_event (multiprocessing.Event): Событие, сигнализирующее о готовности данных
+        processing_done_event (multiprocessing.Event): Событие, сигнализирующее о завершении обработки
+        receiver_ready_event (multiprocessing.Event, optional): Событие, сигнализирующее о готовности приемника
+        stop_event (multiprocessing.Event, optional): Событие для остановки приемника
     """
-    try:
-        logger.info("Receiver process started")
-        
-        # Открываем shared memory буферы
-        buffer1 = shared_memory.SharedMemory(name=buffer1_name)
-        buffer2 = shared_memory.SharedMemory(name=buffer2_name)
-
-        # Создаем numpy массивы как C-непрерывные для более быстрого копирования
-        arr1 = np.ndarray((buffer_size,), dtype=np.uint8, buffer=buffer1.buf)
-        arr2 = np.ndarray((buffer_size,), dtype=np.uint8, buffer=buffer2.buf)
-
-        # Предварительно выделяем буфер для предотвращения фрагментации памяти
-        temp_buffer = np.zeros((buffer_size,), dtype=np.uint8)
-
-        # Устанавливаем высокий приоритет для процесса
-        try:
-            import psutil
-            p = psutil.Process()
-            p.nice(psutil.HIGH_PRIORITY_CLASS if hasattr(psutil, 'HIGH_PRIORITY_CLASS') else -10)
-            
-            # Установка процессорной привязки для снижения переключений контекста
-            if hasattr(p, 'cpu_affinity') and len(p.cpu_affinity()) > 1:
-                # Привязываем к одному ядру для уменьшения прерываний
-                p.cpu_affinity([p.cpu_affinity()[0]])
-        except Exception as e:
-            logger.warning(f"Failed to set process priority: {e}")
-
-        # Сигнализируем о готовности приёмника
-        receiver_ready.set()
-        logger.info("Receiver initialization completed")
-
-        # Создаем пул потоков для фоновых задач
-        executor = ThreadPoolExecutor(max_workers=1)
-        
-        # Для быстрого времени реакции используем спин-лок вместо wait с таймаутом
-        spin_count = 0
-        max_spin = 1000  # Максимальное количество итераций перед переключением на сон
-        
-        while True:
-            # Используем спин-лок с периодическим переключением на сон для снижения нагрузки на CPU
-            if data_ready.is_set():
-                try:
-                    # Используем более быстрый метод копирования с контролем выравнивания памяти
-                    # Отключаем проверки для повышения производительности
-                    np.copyto(arr2, arr1, casting='unsafe')
-                    
-                    # Сигнализируем об окончании обработки и сбрасываем флаг готовности
-                    data_processed.set()
-                    data_ready.clear()
-                except Exception as e:
-                    logger.error(f"Error during array copy: {e}")
-                    try:
-                        # Запасной метод с использованием memcpy из numpy
-                        np.asarray(arr2).view(np.uint8)[:] = np.asarray(arr1).view(np.uint8)[:]
-                        data_processed.set()
-                        data_ready.clear()
-                    except Exception as copy_err:
-                        logger.error(f"Backup copy method also failed: {copy_err}")
-                
-                # Сбрасываем счетчик спина после обработки данных
-                spin_count = 0
-            else:
-                # Используем спин-лок для снижения задержки
-                spin_count += 1
-                if spin_count >= max_spin:
-                    # Если достигли максимального числа итераций, даем другим процессам время выполнения
-                    time.sleep(0.0001)  # 100 микросекунд
-                    spin_count = 0
-
-    except Exception as e:
-        logger.error(f"Error in receiver process: {e}")
-    finally:
-        # Закрываем shared memory буферы и освобождаем ресурсы
-        try:
-            buffer1.close()
-            buffer2.close()
-            if 'executor' in locals():
-                executor.shutdown(wait=False)
-        except Exception as cleanup_err:
-            logger.error(f"Error during cleanup: {cleanup_err}")
-        logger.info("Receiver process shutting down")
-
-if __name__ == "__main__":
-    # Этот блок используется только для тестирования
-    buffer1 = shared_memory.SharedMemory(create=True, size=1024)
-    buffer2 = shared_memory.SharedMemory(create=True, size=1024)
-    data_ready = Event()
-    data_processed = Event()
-    receiver_ready = Event()
+    logger.info(f"Аудио-приемник запущен с буфером размером {buffer_size} байт")
     
     try:
-        run_receiver(
-            buffer1.name,
-            buffer2.name,
-            1024,
-            data_ready,
-            data_processed,
-            receiver_ready
-        )
+        # Подключение к разделяемой памяти
+        input_buffer = shared_memory.SharedMemory(name=input_buffer_name)
+        output_buffer = shared_memory.SharedMemory(name=output_buffer_name)
+        logger.info(f"Подключено к разделяемой памяти: вход {input_buffer_name}, выход {output_buffer_name}")
+        
+        # Создание буферов numpy для эффективной обработки данных
+        # Используем C_CONTIGUOUS и кэшированное выравнивание для оптимизации доступа
+        input_array = np.ndarray((buffer_size,), dtype=np.uint8, buffer=input_buffer.buf, order='C')
+        output_array = np.ndarray((buffer_size,), dtype=np.uint8, buffer=output_buffer.buf, order='C')
+        
+        # Сигнализируем о готовности приемника, если предоставлено событие
+        if receiver_ready_event is not None:
+            receiver_ready_event.set()
+            logger.info("Сигнал о готовности приемника отправлен")
+        
+        # Убедимся, что события находятся в исходном состоянии
+        data_ready_event.clear()
+        processing_done_event.clear()
+        
+        # Адаптивный интервал опроса: начинаем с более высокой частоты, затем адаптируемся
+        poll_interval = 0.001  # 1ms для лучшей отзывчивости
+        max_poll_interval = 0.01  # Максимум 10ms
+        idle_count = 0
+        max_idle_before_adjust = 10
+        
+        # Инициализация счетчиков для мониторинга производительности
+        process_count = 0
+        last_time_check = time.time()
+        processing_times = []
+        
+        # Основной цикл обработки с адаптивным ожиданием
+        while stop_event is None or not stop_event.is_set():
+            # Ожидание новых данных с адаптивным таймаутом
+            if data_ready_event.wait(timeout=poll_interval):
+                # Сброс счетчика простоя при получении данных
+                idle_count = 0
+                start_time = time.time()
+                
+                try:
+                    # Используем прямое копирование с оптимизацией для непрерывных массивов
+                    # Это минимизирует копирование данных и использует векторизацию CPU
+                    np.copyto(output_array, input_array, casting='no')
+                    
+                    # Сигнализируем о завершении обработки
+                    data_ready_event.clear()
+                    processing_done_event.set()
+                    
+                    # Отслеживаем время обработки
+                    end_time = time.time()
+                    processing_times.append(end_time - start_time)
+                    process_count += 1
+                    
+                    # Периодически очищаем список для предотвращения утечек памяти
+                    if len(processing_times) > 100:
+                        processing_times = processing_times[-50:]
+                    
+                    # Логируем производительность каждые 100 обработок
+                    if process_count % 100 == 0:
+                        current_time = time.time()
+                        elapsed = current_time - last_time_check
+                        avg_processing = np.mean(processing_times) * 1000 if processing_times else 0
+                        logger.info(f"Производительность: {process_count/elapsed:.2f} фреймов/сек, среднее время обработки: {avg_processing:.2f}мс")
+                        last_time_check = current_time
+                        
+                except Exception as e:
+                    logger.error(f"Ошибка при обработке данных: {e}")
+                    # Даже при ошибке гарантируем корректное состояние событий
+                    data_ready_event.clear()
+                    processing_done_event.set()
+            else:
+                # Увеличиваем интервал опроса при простое для снижения нагрузки на CPU
+                idle_count += 1
+                if idle_count >= max_idle_before_adjust:
+                    poll_interval = min(poll_interval * 1.5, max_poll_interval)
+                    idle_count = 0
+                    # При долгом простое уменьшаем частоту записи логов
+                    if process_count > 0:
+                        logger.debug(f"Простой: адаптивный интервал опроса установлен на {poll_interval*1000:.2f}мс")
+    
+    except Exception as e:
+        logger.error(f"Ошибка в аудио-приемнике: {e}")
+    
     finally:
-        buffer1.close()
-        buffer1.unlink()
-        buffer2.close()
-        buffer2.unlink() 
+        try:
+            # Очистка ресурсов
+            input_buffer.close()
+            output_buffer.close()
+            logger.info("Аудио-приемник завершил работу и освободил ресурсы")
+        except Exception as e:
+            logger.error(f"Ошибка при освобождении ресурсов: {e}")
+
+if __name__ == "__main__":
+    # Код для тестирования приемника
+    from multiprocessing import Event, Process
+    import numpy as np
+    
+    # Создание разделяемой памяти для тестирования
+    buffer_size = 1024
+    input_mem = shared_memory.SharedMemory(create=True, size=buffer_size)
+    output_mem = shared_memory.SharedMemory(create=True, size=buffer_size)
+    
+    # Создание событий для синхронизации
+    data_ready = Event()
+    processing_done = Event()
+    receiver_ready = Event()
+    stop_event = Event()
+    
+    # Запуск приемника в отдельном процессе
+    receiver_process = Process(
+        target=run_receiver,
+        args=(input_mem.name, output_mem.name, buffer_size, 
+              data_ready, processing_done, receiver_ready, stop_event)
+    )
+    receiver_process.start()
+    
+    # Ожидаем готовности приемника
+    receiver_ready.wait(timeout=5.0)
+    
+    try:
+        # Тестовое заполнение буфера
+        input_array = np.ndarray((buffer_size,), dtype=np.uint8, buffer=input_mem.buf)
+        output_array = np.ndarray((buffer_size,), dtype=np.uint8, buffer=output_mem.buf)
+        
+        # Имитация отправки данных
+        for i in range(5):
+            input_array[:] = np.random.randint(0, 255, size=buffer_size, dtype=np.uint8)
+            data_ready.set()
+            processing_done.wait()
+            processing_done.clear()
+            time.sleep(0.1)
+            print(f"Тест {i+1}: Среднее значение обработанных данных: {np.mean(output_array):.2f}")
+        
+        # Остановка приемника
+        stop_event.set()
+        receiver_process.join(timeout=1.0)
+        
+    finally:
+        # Очистка ресурсов
+        input_mem.close()
+        input_mem.unlink()
+        output_mem.close()
+        output_mem.unlink()
