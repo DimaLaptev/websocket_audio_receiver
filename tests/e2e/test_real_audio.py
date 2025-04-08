@@ -6,6 +6,9 @@ from tests.test_utils import TestWebSocketClient
 from websockets_audio_receiver.server import BUFFER_SIZE
 import logging
 
+# Настройка логгера
+logger = logging.getLogger(__name__)
+
 # Максимальный размер данных, с учетом 4 байт для хранения длины
 MAX_DATA_SIZE = BUFFER_SIZE - 4
 
