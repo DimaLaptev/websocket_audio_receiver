@@ -1,0 +1,1068 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.2, pytest-7.4.3, pluggy-1.5.0 -- C:\Users\Admin\Documents\Dev\websockets_audio_receiver\venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Admin\Documents\Dev\websockets_audio_receiver
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-3.7.1, asyncio-0.21.1, cov-4.1.0
+asyncio: mode=Mode.AUTO
+collecting ... collected 24 items
+
+tests/e2e/test_real_audio.py::test_real_audio_stream 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:30 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [  4%]
+tests/e2e/test_real_audio.py::test_audio_timing 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:32 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [  8%]
+tests/e2e/test_real_audio.py::test_continuous_audio_stream 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:35 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 12%]
+tests/integration/test_data_flow.py::test_full_data_flow 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:37 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 16%]
+tests/integration/test_data_flow.py::test_multi_client_scenario 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:39 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 20%]
+tests/integration/test_data_flow.py::test_session_isolation 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:41 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 25%]
+tests/load/test_performance.py::test_throughput 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:43 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 29%]
+tests/load/test_performance.py::test_buffer_overflow 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:46 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 33%]
+tests/load/test_performance.py::test_concurrent_load 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:48 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 37%]
+tests/security/test_reliability.py::test_resource_cleanup 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:50 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 41%]
+tests/security/test_reliability.py::test_graceful_shutdown 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:52 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 45%]
+tests/security/test_reliability.py::test_error_recovery 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:54 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 50%]
+tests/security/test_reliability.py::test_session_timeout 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:09:56 [   ERROR] Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение (test_utils.py:43)
+FAILED                                                                   [ 54%]
+tests/special/test_synchronization.py::test_concurrent_buffer_access PASSED [ 58%]
+tests/special/test_synchronization.py::test_race_conditions 
+-------------------------------- live log call --------------------------------
+2025-04-07 02:14:05 [    INFO] Получен сигнал завершения, останавливаем сервер... (test_audio_receiver.py:175)
+FAILED                                                                   [ 62%]
+tests/special/test_synchronization.py::test_buffer_recovery FAILED       [ 66%]
+tests/special/test_synchronization.py::test_process_synchronization FAILED [ 70%]
+tests/unit/test_audio_receiver.py::test_start_audio_receiver_command 
+------------------------------- live log setup --------------------------------
+2025-04-07 02:14:05 [    INFO] Запуск фикстуры start_server... (test_audio_receiver.py:162)
+2025-04-07 02:14:05 [    INFO] Процесс сервера запущен (test_audio_receiver.py:124)
+2025-04-07 02:14:05 [    INFO] Ожидание запуска сервера... (test_audio_receiver.py:50)
+2025-04-07 02:14:05 [    INFO] Порт 8001 освободился (test_audio_receiver.py:56)
+2025-04-07 02:14:07 [    INFO] Сервер доступен (test_audio_receiver.py:66)
+2025-04-07 02:14:07 [    INFO] Ожидание инициализации сервера... (test_audio_receiver.py:135)
+2025-04-07 02:14:22 [    INFO] Получен сигнал завершения, останавливаем сервер... (test_audio_receiver.py:175)
+2025-04-07 02:14:22 [    INFO] Остановка сервера... (test_audio_receiver.py:153)
+2025-04-07 02:14:22 [    INFO] Сервер остановлен (test_audio_receiver.py:157)
+ERROR                                                                    [ 75%]
+tests/unit/test_audio_receiver.py::test_invalid_command 
+------------------------------- live log setup --------------------------------
+2025-04-07 02:14:22 [    INFO] Запуск фикстуры start_server... (test_audio_receiver.py:162)
+2025-04-07 02:14:22 [    INFO] Процесс сервера запущен (test_audio_receiver.py:124)
+2025-04-07 02:14:22 [    INFO] Ожидание запуска сервера... (test_audio_receiver.py:50)
+2025-04-07 02:14:22 [    INFO] Порт 8001 освободился (test_audio_receiver.py:56)
+2025-04-07 02:14:23 [    INFO] Сервер доступен (test_audio_receiver.py:66)
+2025-04-07 02:14:23 [    INFO] Ожидание инициализации сервера... (test_audio_receiver.py:135)
+2025-04-07 02:14:38 [    INFO] Получен сигнал завершения, останавливаем сервер... (test_audio_receiver.py:175)
+2025-04-07 02:14:38 [    INFO] Остановка сервера... (test_audio_receiver.py:153)
+2025-04-07 02:14:38 [    INFO] Сервер остановлен (test_audio_receiver.py:157)
+ERROR                                                                    [ 79%]
+tests/unit/test_audio_receiver.py::test_binary_data_validation 
+------------------------------- live log setup --------------------------------
+2025-04-07 02:14:38 [    INFO] Запуск фикстуры start_server... (test_audio_receiver.py:162)
+2025-04-07 02:14:38 [    INFO] Процесс сервера запущен (test_audio_receiver.py:124)
+2025-04-07 02:14:38 [    INFO] Ожидание запуска сервера... (test_audio_receiver.py:50)
+2025-04-07 02:14:38 [    INFO] Порт 8001 освободился (test_audio_receiver.py:56)
+2025-04-07 02:14:39 [    INFO] Сервер доступен (test_audio_receiver.py:66)
+2025-04-07 02:14:39 [    INFO] Ожидание инициализации сервера... (test_audio_receiver.py:135)
+2025-04-07 02:14:54 [    INFO] Получен сигнал завершения, останавливаем сервер... (test_audio_receiver.py:175)
+2025-04-07 02:14:54 [    INFO] Остановка сервера... (test_audio_receiver.py:153)
+2025-04-07 02:14:54 [    INFO] Сервер остановлен (test_audio_receiver.py:157)
+ERROR                                                                    [ 83%]
+tests/unit/test_audio_receiver.py::test_buffer_creation_deletion 
+------------------------------- live log setup --------------------------------
+2025-04-07 02:14:54 [    INFO] Запуск фикстуры start_server... (test_audio_receiver.py:162)
+2025-04-07 02:14:54 [    INFO] Процесс сервера запущен (test_audio_receiver.py:124)
+2025-04-07 02:14:54 [    INFO] Ожидание запуска сервера... (test_audio_receiver.py:50)
+2025-04-07 02:14:54 [    INFO] Порт 8001 освободился (test_audio_receiver.py:56)
+2025-04-07 02:14:56 [    INFO] Сервер доступен (test_audio_receiver.py:66)
+2025-04-07 02:14:56 [    INFO] Ожидание инициализации сервера... (test_audio_receiver.py:135)
+2025-04-07 02:15:11 [    INFO] Ожидание доступности WebSocket... (test_audio_receiver.py:76)
+2025-04-07 02:15:11 [    INFO] WebSocket доступен, получено приветственное сообщение: {"status":"connected","message":"WebSocket connection established"} (test_audio_receiver.py:83)
+2025-04-07 02:15:11 [    INFO] WebSocket успешно подключен (test_audio_receiver.py:90)
+2025-04-07 02:15:11 [    INFO] Сервер и WebSocket готовы к работе (test_audio_receiver.py:146)
+PASSED                                                                   [ 87%]
+------------------------------ live log teardown ------------------------------
+2025-04-07 02:15:11 [    INFO] Остановка сервера... (test_audio_receiver.py:153)
+2025-04-07 02:15:11 [    INFO] Сервер остановлен (test_audio_receiver.py:157)
+
+tests/unit/test_audio_receiver.py::test_buffer_error_handling 
+------------------------------- live log setup --------------------------------
+2025-04-07 02:15:11 [    INFO] Запуск фикстуры start_server... (test_audio_receiver.py:162)
+2025-04-07 02:15:11 [    INFO] Процесс сервера запущен (test_audio_receiver.py:124)
+2025-04-07 02:15:11 [    INFO] Ожидание запуска сервера... (test_audio_receiver.py:50)
+2025-04-07 02:15:11 [    INFO] Порт 8001 освободился (test_audio_receiver.py:56)
+2025-04-07 02:15:12 [    INFO] Сервер доступен (test_audio_receiver.py:66)
+2025-04-07 02:15:12 [    INFO] Ожидание инициализации сервера... (test_audio_receiver.py:135)
+2025-04-07 02:15:27 [    INFO] Ожидание доступности WebSocket... (test_audio_receiver.py:76)
+2025-04-07 02:15:27 [    INFO] WebSocket доступен, получено приветственное сообщение: {"status":"connected","message":"WebSocket connection established"} (test_audio_receiver.py:83)
+2025-04-07 02:15:27 [    INFO] WebSocket успешно подключен (test_audio_receiver.py:90)
+2025-04-07 02:15:27 [    INFO] Сервер и WebSocket готовы к работе (test_audio_receiver.py:146)
+PASSED                                                                   [ 91%]
+------------------------------ live log teardown ------------------------------
+2025-04-07 02:15:27 [    INFO] Остановка сервера... (test_audio_receiver.py:153)
+2025-04-07 02:15:27 [    INFO] Сервер остановлен (test_audio_receiver.py:157)
+
+tests/unit/test_audio_receiver.py::test_data_integrity 
+------------------------------- live log setup --------------------------------
+2025-04-07 02:15:27 [    INFO] Запуск фикстуры start_server... (test_audio_receiver.py:162)
+2025-04-07 02:15:27 [    INFO] Процесс сервера запущен (test_audio_receiver.py:124)
+2025-04-07 02:15:27 [    INFO] Ожидание запуска сервера... (test_audio_receiver.py:50)
+2025-04-07 02:15:27 [    INFO] Порт 8001 освободился (test_audio_receiver.py:56)
+2025-04-07 02:15:28 [    INFO] Сервер доступен (test_audio_receiver.py:66)
+2025-04-07 02:15:28 [    INFO] Ожидание инициализации сервера... (test_audio_receiver.py:135)
+2025-04-07 02:15:43 [    INFO] Ожидание доступности WebSocket... (test_audio_receiver.py:76)
+2025-04-07 02:15:43 [    INFO] WebSocket доступен, получено приветственное сообщение: {"status":"connected","message":"WebSocket connection established"} (test_audio_receiver.py:83)
+2025-04-07 02:15:43 [    INFO] WebSocket успешно подключен (test_audio_receiver.py:90)
+2025-04-07 02:15:43 [    INFO] Сервер и WebSocket готовы к работе (test_audio_receiver.py:146)
+PASSED                                                                   [ 95%]
+------------------------------ live log teardown ------------------------------
+2025-04-07 02:15:43 [    INFO] Остановка сервера... (test_audio_receiver.py:153)
+2025-04-07 02:15:43 [    INFO] Сервер остановлен (test_audio_receiver.py:157)
+
+tests/unit/test_audio_receiver.py::test_lock_mechanism 
+------------------------------- live log setup --------------------------------
+2025-04-07 02:15:43 [    INFO] Запуск фикстуры start_server... (test_audio_receiver.py:162)
+2025-04-07 02:15:43 [    INFO] Процесс сервера запущен (test_audio_receiver.py:124)
+2025-04-07 02:15:43 [    INFO] Ожидание запуска сервера... (test_audio_receiver.py:50)
+2025-04-07 02:15:43 [    INFO] Порт 8001 освободился (test_audio_receiver.py:56)
+2025-04-07 02:15:45 [    INFO] Сервер доступен (test_audio_receiver.py:66)
+2025-04-07 02:15:45 [    INFO] Ожидание инициализации сервера... (test_audio_receiver.py:135)
+2025-04-07 02:16:00 [    INFO] Ожидание доступности WebSocket... (test_audio_receiver.py:76)
+2025-04-07 02:16:00 [    INFO] WebSocket доступен, получено приветственное сообщение: {"status":"connected","message":"WebSocket connection established"} (test_audio_receiver.py:83)
+2025-04-07 02:16:00 [    INFO] WebSocket успешно подключен (test_audio_receiver.py:90)
+2025-04-07 02:16:00 [    INFO] Сервер и WebSocket готовы к работе (test_audio_receiver.py:146)
+PASSED                                                                   [100%]
+------------------------------ live log teardown ------------------------------
+2025-04-07 02:16:00 [    INFO] Остановка сервера... (test_audio_receiver.py:153)
+2025-04-07 02:16:00 [    INFO] Сервер остановлен (test_audio_receiver.py:157)
+
+
+=================================== ERRORS ====================================
+_____________ ERROR at setup of test_start_audio_receiver_command _____________
+
+sig = 2
+frame = <frame at 0x00000209DBF94540, file 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\windows_events.py', line 769, code _poll>
+
+    def signal_handler(sig, frame):
+        logger.info("Получен сигнал завершения, останавливаем сервер...")
+        stop_server()
+>       sys.exit(0)
+E       SystemExit: 0
+
+tests\unit\test_audio_receiver.py:177: SystemExit
+---------------------------- Captured stdout setup ----------------------------
+INFO:     127.0.0.1:58029 - "GET /health HTTP/1.1" 200 OK
+---------------------------- Captured stderr setup ----------------------------
+INFO:tests.unit.test_audio_receiver:\u0417\u0430\u043f\u0443\u0441\u043a \u0444\u0438\u043a\u0441\u0442\u0443\u0440\u044b start_server...\nINFO:tests.unit.test_audio_receiver:\u041f\u0440\u043e\u0446\u0435\u0441\u0441 \u0441\u0435\u0440\u0432\u0435\u0440\u0430 \u0437\u0430\u043f\u0443\u0449\u0435\u043d\nINFO:tests.unit.test_audio_receiver:\u041e\u0436\u0438\u0434\u0430\u043d\u0438\u0435 \u0437\u0430\u043f\u0443\u0441\u043a\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430...\nINFO:tests.unit.test_audio_receiver:\u041f\u043e\u0440\u0442 8001 \u043e\u0441\u0432\u043e\u0431\u043e\u0434\u0438\u043b\u0441\u044f\nTraceback (most recent call last):\r\n  File "<string>", line 1, in <module>\r\n  File "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\spawn.py", line 122, in spawn_main\r\n    exitcode = _main(fd, parent_sentinel)\r\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File "C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\spawn.py", line 132, in _main\r\n    self = reduction.pickle.load(from_parent)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nEOFError: Ran out of input\r\nINFO:tests.unit.test_audio_receiver:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd...\r\nINFO:websockets_audio_receiver.server:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd WebSocket \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd...\r\nINFO:websockets_audio_receiver.server:WebSocket \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\r\nINFO:     Started server process [110324]\r\nINFO:     Waiting for application startup.\r\nINFO:     Application startup complete.\r\nINFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)\r\nINFO:websockets_audio_receiver.server:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\r\nINFO:tests.unit.test_audio_receiver:\u0421\u0435\u0440\u0432\u0435\u0440 \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d\nINFO:tests.unit.test_audio_receiver:\u041e\u0436\u0438\u0434\u0430\u043d\u0438\u0435 \u0438\u043d\u0438\u0446\u0438\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0438 \u0441\u0435\u0440\u0432\u0435\u0440\u0430...\nINFO:     Shutting down\r\nINFO:     Waiting for application shutdown.\r\nINFO:     Application shutdown complete.\r\nINFO:     Finished server process [110324]\r\nINFO:tests.unit.test_audio_receiver:\u041f\u043e\u043b\u0443\u0447\u0435\u043d \u0441\u0438\u0433\u043d\u0430\u043b \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u044f, \u043e\u0441\u0442\u0430\u043d\u0430\u0432\u043b\u0438\u0432\u0430\u0435\u043c \u0441\u0435\u0440\u0432\u0435\u0440...\nINFO:tests.unit.test_audio_receiver:\u041e\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430...\nINFO:tests.unit.test_audio_receiver:\u0421\u0435\u0440\u0432\u0435\u0440 \u043e\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d
+----------------------------- Captured log setup ------------------------------
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:162 Запуск фикстуры start_server...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:124 Процесс сервера запущен
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:50 Ожидание запуска сервера...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:56 Порт 8001 освободился
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:66 Сервер доступен
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:135 Ожидание инициализации сервера...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:175 Получен сигнал завершения, останавливаем сервер...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:153 Остановка сервера...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:157 Сервер остановлен
+___________________ ERROR at setup of test_invalid_command ____________________
+
+sig = 2
+frame = <frame at 0x00000209DBF94A40, file 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\windows_events.py', line 769, code _poll>
+
+    def signal_handler(sig, frame):
+        logger.info("Получен сигнал завершения, останавливаем сервер...")
+        stop_server()
+>       sys.exit(0)
+E       SystemExit: 0
+
+tests\unit\test_audio_receiver.py:177: SystemExit
+---------------------------- Captured stdout setup ----------------------------
+INFO:     127.0.0.1:58048 - "GET /health HTTP/1.1" 200 OK
+---------------------------- Captured stderr setup ----------------------------
+INFO:tests.unit.test_audio_receiver:\u0417\u0430\u043f\u0443\u0441\u043a \u0444\u0438\u043a\u0441\u0442\u0443\u0440\u044b start_server...\nINFO:tests.unit.test_audio_receiver:\u041f\u0440\u043e\u0446\u0435\u0441\u0441 \u0441\u0435\u0440\u0432\u0435\u0440\u0430 \u0437\u0430\u043f\u0443\u0449\u0435\u043d\nINFO:tests.unit.test_audio_receiver:\u041e\u0436\u0438\u0434\u0430\u043d\u0438\u0435 \u0437\u0430\u043f\u0443\u0441\u043a\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430...\nINFO:tests.unit.test_audio_receiver:\u041f\u043e\u0440\u0442 8001 \u043e\u0441\u0432\u043e\u0431\u043e\u0434\u0438\u043b\u0441\u044f\nINFO:tests.unit.test_audio_receiver:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd...\r\nINFO:websockets_audio_receiver.server:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd WebSocket \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd...\r\nINFO:websockets_audio_receiver.server:WebSocket \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\r\nINFO:     Started server process [102464]\r\nINFO:     Waiting for application startup.\r\nINFO:     Application startup complete.\r\nINFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)\r\nINFO:websockets_audio_receiver.server:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\r\nINFO:tests.unit.test_audio_receiver:\u0421\u0435\u0440\u0432\u0435\u0440 \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d\nINFO:tests.unit.test_audio_receiver:\u041e\u0436\u0438\u0434\u0430\u043d\u0438\u0435 \u0438\u043d\u0438\u0446\u0438\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0438 \u0441\u0435\u0440\u0432\u0435\u0440\u0430...\nINFO:     Shutting down\r\nINFO:     Waiting for application shutdown.\r\nINFO:     Application shutdown complete.\r\nINFO:     Finished server process [102464]\r\nINFO:tests.unit.test_audio_receiver:\u041f\u043e\u043b\u0443\u0447\u0435\u043d \u0441\u0438\u0433\u043d\u0430\u043b \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u044f, \u043e\u0441\u0442\u0430\u043d\u0430\u0432\u043b\u0438\u0432\u0430\u0435\u043c \u0441\u0435\u0440\u0432\u0435\u0440...\nINFO:tests.unit.test_audio_receiver:\u041e\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430...\nINFO:tests.unit.test_audio_receiver:\u0421\u0435\u0440\u0432\u0435\u0440 \u043e\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d
+----------------------------- Captured log setup ------------------------------
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:162 Запуск фикстуры start_server...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:124 Процесс сервера запущен
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:50 Ожидание запуска сервера...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:56 Порт 8001 освободился
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:66 Сервер доступен
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:135 Ожидание инициализации сервера...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:175 Получен сигнал завершения, останавливаем сервер...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:153 Остановка сервера...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:157 Сервер остановлен
+________________ ERROR at setup of test_binary_data_validation ________________
+
+sig = 2
+frame = <frame at 0x00000209DBF94B80, file 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\asyncio\\windows_events.py', line 769, code _poll>
+
+    def signal_handler(sig, frame):
+        logger.info("Получен сигнал завершения, останавливаем сервер...")
+        stop_server()
+>       sys.exit(0)
+E       SystemExit: 0
+
+tests\unit\test_audio_receiver.py:177: SystemExit
+---------------------------- Captured stdout setup ----------------------------
+INFO:     127.0.0.1:58058 - "GET /health HTTP/1.1" 200 OK
+---------------------------- Captured stderr setup ----------------------------
+INFO:tests.unit.test_audio_receiver:\u0417\u0430\u043f\u0443\u0441\u043a \u0444\u0438\u043a\u0441\u0442\u0443\u0440\u044b start_server...\nINFO:tests.unit.test_audio_receiver:\u041f\u0440\u043e\u0446\u0435\u0441\u0441 \u0441\u0435\u0440\u0432\u0435\u0440\u0430 \u0437\u0430\u043f\u0443\u0449\u0435\u043d\nINFO:tests.unit.test_audio_receiver:\u041e\u0436\u0438\u0434\u0430\u043d\u0438\u0435 \u0437\u0430\u043f\u0443\u0441\u043a\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430...\nINFO:tests.unit.test_audio_receiver:\u041f\u043e\u0440\u0442 8001 \u043e\u0441\u0432\u043e\u0431\u043e\u0434\u0438\u043b\u0441\u044f\nINFO:tests.unit.test_audio_receiver:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd...\r\nINFO:websockets_audio_receiver.server:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd WebSocket \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd...\r\nINFO:websockets_audio_receiver.server:WebSocket \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\r\nINFO:     Started server process [114560]\r\nINFO:     Waiting for application startup.\r\nINFO:     Application startup complete.\r\nINFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)\r\nINFO:websockets_audio_receiver.server:\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd \ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\r\nINFO:tests.unit.test_audio_receiver:\u0421\u0435\u0440\u0432\u0435\u0440 \u0434\u043e\u0441\u0442\u0443\u043f\u0435\u043d\nINFO:tests.unit.test_audio_receiver:\u041e\u0436\u0438\u0434\u0430\u043d\u0438\u0435 \u0438\u043d\u0438\u0446\u0438\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u0438 \u0441\u0435\u0440\u0432\u0435\u0440\u0430...\nINFO:     Shutting down\r\nINFO:     Waiting for application shutdown.\r\nINFO:     Application shutdown complete.\r\nINFO:     Finished server process [114560]\r\nINFO:tests.unit.test_audio_receiver:\u041f\u043e\u043b\u0443\u0447\u0435\u043d \u0441\u0438\u0433\u043d\u0430\u043b \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u044f, \u043e\u0441\u0442\u0430\u043d\u0430\u0432\u043b\u0438\u0432\u0430\u0435\u043c \u0441\u0435\u0440\u0432\u0435\u0440...\nINFO:tests.unit.test_audio_receiver:\u041e\u0441\u0442\u0430\u043d\u043e\u0432\u043a\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430...\nINFO:tests.unit.test_audio_receiver:\u0421\u0435\u0440\u0432\u0435\u0440 \u043e\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d
+----------------------------- Captured log setup ------------------------------
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:162 Запуск фикстуры start_server...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:124 Процесс сервера запущен
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:50 Ожидание запуска сервера...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:56 Порт 8001 освободился
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:66 Сервер доступен
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:135 Ожидание инициализации сервера...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:175 Получен сигнал завершения, останавливаем сервер...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:153 Остановка сервера...
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:157 Сервер остановлен
+================================== FAILURES ===================================
+___________________________ test_real_audio_stream ____________________________
+
+    @pytest.mark.asyncio
+    async def test_real_audio_stream():
+        """Тест передачи реального аудиопотока"""
+        client = TestWebSocketClient()
+>       await client.connect()
+
+tests\e2e\test_real_audio.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBEC1830>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+______________________________ test_audio_timing ______________________________
+
+    @pytest.mark.asyncio
+    async def test_audio_timing():
+        """Тест временных характеристик аудиопотока"""
+        client = TestWebSocketClient()
+>       await client.connect()
+
+tests\e2e\test_real_audio.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBEC2370>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+________________________ test_continuous_audio_stream _________________________
+
+    @pytest.mark.asyncio
+    async def test_continuous_audio_stream():
+        """Тест непрерывного аудиопотока"""
+        client = TestWebSocketClient()
+>       await client.connect()
+
+tests\e2e\test_real_audio.py:98: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBEC21F0>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+_____________________________ test_full_data_flow _____________________________
+
+    @pytest.mark.asyncio
+    async def test_full_data_flow():
+        """Тест полного цикла передачи данных"""
+        client = TestWebSocketClient()
+>       await client.connect()
+
+tests\integration\test_data_flow.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBEC2C70>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+_________________________ test_multi_client_scenario __________________________
+
+    @pytest.mark.asyncio
+    async def test_multi_client_scenario():
+        """Тест многопользовательского сценария"""
+        # Создание трех клиентов
+        clients = [TestWebSocketClient() for _ in range(3)]
+        for client in clients:
+>           await client.connect()
+
+tests\integration\test_data_flow.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBEC2430>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+___________________________ test_session_isolation ____________________________
+
+    @pytest.mark.asyncio
+    async def test_session_isolation():
+        """Тест изолированности сессий"""
+        client1 = TestWebSocketClient()
+        client2 = TestWebSocketClient()
+    
+>       await client1.connect()
+
+tests\integration\test_data_flow.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBEC3870>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+_______________________________ test_throughput _______________________________
+
+    @pytest.mark.asyncio
+    async def test_throughput():
+        """Тест пропускной способности"""
+        client = TestWebSocketClient()
+>       await client.connect()
+
+tests\load\test_performance.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBEC3E70>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+____________________________ test_buffer_overflow _____________________________
+
+    @pytest.mark.asyncio
+    async def test_buffer_overflow():
+        """Тест обработки переполнения буфера"""
+        client = TestWebSocketClient()
+>       await client.connect()
+
+tests\load\test_performance.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBFD0270>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+____________________________ test_concurrent_load _____________________________
+
+    @pytest.mark.asyncio
+    async def test_concurrent_load():
+        """Тест параллельной нагрузки"""
+        num_clients = 5
+        clients = [TestWebSocketClient() for _ in range(num_clients)]
+    
+        for client in clients:
+>           await client.connect()
+
+tests\load\test_performance.py:79: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBFD0FF0>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+____________________________ test_resource_cleanup ____________________________
+
+    @pytest.mark.asyncio
+    async def test_resource_cleanup():
+        """Тест очистки ресурсов при многократном создании/удалении сессий"""
+        monitor = MemoryMonitor()
+    
+        for i in range(100):
+            client = TestWebSocketClient()
+>           await client.connect()
+
+tests\security\test_reliability.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBFD2430>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+___________________________ test_graceful_shutdown ____________________________
+
+    @pytest.mark.asyncio
+    async def test_graceful_shutdown():
+        """Тест graceful shutdown во время передачи данных"""
+        client = TestWebSocketClient()
+>       await client.connect()
+
+tests\security\test_reliability.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBFD0B70>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+_____________________________ test_error_recovery _____________________________
+
+    @pytest.mark.asyncio
+    async def test_error_recovery():
+        """Тест восстановления после ошибок"""
+        client = TestWebSocketClient()
+>       await client.connect()
+
+tests\security\test_reliability.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBFD3AB0>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+____________________________ test_session_timeout _____________________________
+
+    @pytest.mark.asyncio
+    async def test_session_timeout():
+        """Тест таймаута сессии"""
+        client = TestWebSocketClient()
+>       await client.connect()
+
+tests\security\test_reliability.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_utils.py:33: in connect
+    self.ws = await asyncio.wait_for(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:520: in wait_for
+    return await fut
+venv\Lib\site-packages\websockets\legacy\client.py:647: in __await_impl_timeout__
+    return await self.__await_impl__()
+venv\Lib\site-packages\websockets\legacy\client.py:651: in __await_impl__
+    _transport, _protocol = await self._create_connection()
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1120: in create_connection
+    raise exceptions[0]
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1102: in create_connection
+    sock = await self._connect_sock(
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\base_events.py:1005: in _connect_sock
+    await self.sock_connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\proactor_events.py:727: in sock_connect
+    return await self._proactor.connect(sock, address)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:798: in _poll
+    value = callback(transferred, key, ov)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+trans = 0, key = 0, ov = <_overlapped.Overlapped object at 0x00000209DBFD30F0>
+
+    def finish_connect(trans, key, ov):
+>       ov.getresult()
+E       ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\asyncio\windows_events.py:594: ConnectionRefusedError
+---------------------------- Captured stderr call -----------------------------
+ERROR:tests.test_utils:Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+------------------------------ Captured log call ------------------------------
+ERROR    tests.test_utils:test_utils.py:43 Ошибка подключения к ws://127.0.0.1:8001/ws: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+____________________________ test_race_conditions _____________________________
+
+    async def read_data():
+>       with lock1:
+
+tests\special\test_synchronization.py:69: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\synchronize.py:95: in __enter__
+    return self._semlock.__enter__()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+sig = 2
+frame = <frame at 0x00000209DC034FE0, file 'C:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\multiprocessing\\synchronize.py', line 95, code __enter__>
+
+    def signal_handler(sig, frame):
+        logger.info("Получен сигнал завершения, останавливаем сервер...")
+        stop_server()
+>       sys.exit(0)
+E       SystemExit: 0
+
+tests\unit\test_audio_receiver.py:177: SystemExit
+---------------------------- Captured stderr call -----------------------------
+INFO:tests.unit.test_audio_receiver:Получен сигнал завершения, останавливаем сервер...
+------------------------------ Captured log call ------------------------------
+INFO     tests.unit.test_audio_receiver:test_audio_receiver.py:175 Получен сигнал завершения, останавливаем сервер...
+____________________________ test_buffer_recovery _____________________________
+
+    @pytest.mark.asyncio
+    async def test_buffer_recovery():
+        """Тест восстановления после сбоев в shared memory"""
+        # Создание буферов
+        buffer1 = shared_memory.SharedMemory(create=True, size=BUFFER_SIZE)
+        buffer2 = shared_memory.SharedMemory(create=True, size=BUFFER_SIZE)
+    
+        try:
+            # Имитация сбоя в shared memory
+            test_data = generate_test_audio_data(1024)
+            buffer1.buf[:len(test_data)] = test_data
+    
+            # Попытка восстановления
+            try:
+                buffer1.close()
+>               buffer1 = shared_memory.SharedMemory(name=buffer1.name)
+
+tests\special\test_synchronization.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <[AttributeError("'SharedMemory' object has no attribute '_size'") raised in repr()] SharedMemory object at 0x209dbf6ca40>
+name = 'wnsm_212fdba5', create = False, size = 0
+
+    def __init__(self, name=None, create=False, size=0):
+        if not size >= 0:
+            raise ValueError("'size' must be a positive integer")
+        if create:
+            self._flags = _O_CREX | os.O_RDWR
+            if size == 0:
+                raise ValueError("'size' must be a positive number different from zero")
+        if name is None and not self._flags & os.O_EXCL:
+            raise ValueError("'name' can only be None if create=True")
+    
+        if _USE_POSIX:
+    
+            # POSIX Shared Memory
+    
+            if name is None:
+                while True:
+                    name = _make_filename()
+                    try:
+                        self._fd = _posixshmem.shm_open(
+                            name,
+                            self._flags,
+                            mode=self._mode
+                        )
+                    except FileExistsError:
+                        continue
+                    self._name = name
+                    break
+            else:
+                name = "/" + name if self._prepend_leading_slash else name
+                self._fd = _posixshmem.shm_open(
+                    name,
+                    self._flags,
+                    mode=self._mode
+                )
+                self._name = name
+            try:
+                if create and size:
+                    os.ftruncate(self._fd, size)
+                stats = os.fstat(self._fd)
+                size = stats.st_size
+                self._mmap = mmap.mmap(self._fd, size)
+            except OSError:
+                self.unlink()
+                raise
+    
+            resource_tracker.register(self._name, "shared_memory")
+    
+        else:
+    
+            # Windows Named Shared Memory
+    
+            if create:
+                while True:
+                    temp_name = _make_filename() if name is None else name
+                    # Create and reserve shared memory block with this name
+                    # until it can be attached to by mmap.
+                    h_map = _winapi.CreateFileMapping(
+                        _winapi.INVALID_HANDLE_VALUE,
+                        _winapi.NULL,
+                        _winapi.PAGE_READWRITE,
+                        (size >> 32) & 0xFFFFFFFF,
+                        size & 0xFFFFFFFF,
+                        temp_name
+                    )
+                    try:
+                        last_error_code = _winapi.GetLastError()
+                        if last_error_code == _winapi.ERROR_ALREADY_EXISTS:
+                            if name is not None:
+                                raise FileExistsError(
+                                    errno.EEXIST,
+                                    os.strerror(errno.EEXIST),
+                                    name,
+                                    _winapi.ERROR_ALREADY_EXISTS
+                                )
+                            else:
+                                continue
+                        self._mmap = mmap.mmap(-1, size, tagname=temp_name)
+                    finally:
+                        _winapi.CloseHandle(h_map)
+                    self._name = temp_name
+                    break
+    
+            else:
+                self._name = name
+                # Dynamically determine the existing named shared memory
+                # block's size which is likely a multiple of mmap.PAGESIZE.
+>               h_map = _winapi.OpenFileMapping(
+                    _winapi.FILE_MAP_READ,
+                    False,
+                    name
+                )
+E               FileNotFoundError: [WinError 2] Не удается найти указанный файл: 'wnsm_212fdba5'
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\shared_memory.py:161: FileNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    @pytest.mark.asyncio
+    async def test_buffer_recovery():
+        """Тест восстановления после сбоев в shared memory"""
+        # Создание буферов
+        buffer1 = shared_memory.SharedMemory(create=True, size=BUFFER_SIZE)
+        buffer2 = shared_memory.SharedMemory(create=True, size=BUFFER_SIZE)
+    
+        try:
+            # Имитация сбоя в shared memory
+            test_data = generate_test_audio_data(1024)
+            buffer1.buf[:len(test_data)] = test_data
+    
+            # Попытка восстановления
+            try:
+                buffer1.close()
+                buffer1 = shared_memory.SharedMemory(name=buffer1.name)
+                recovered_data = bytes(buffer1.buf[:len(test_data)])
+                assert recovered_data == test_data
+            except Exception as e:
+>               pytest.fail(f"Failed to recover from shared memory error: {e}")
+E               Failed: Failed to recover from shared memory error: [WinError 2] Не удается найти указанный файл: 'wnsm_212fdba5'
+
+tests\special\test_synchronization.py:109: Failed
+________________________ test_process_synchronization _________________________
+
+    @pytest.mark.asyncio
+    async def test_process_synchronization():
+        """Тест синхронизации процессов"""
+        import multiprocessing as mp
+    
+        # Создание буферов
+        buffer1 = shared_memory.SharedMemory(create=True, size=BUFFER_SIZE)
+        buffer2 = shared_memory.SharedMemory(create=True, size=BUFFER_SIZE)
+        lock1 = Lock()
+        lock2 = Lock()
+    
+        try:
+            # Функция для процесса
+            def process_work(buffer_name, lock):
+                shm = shared_memory.SharedMemory(name=buffer_name)
+                l = Lock()
+                test_data = generate_test_audio_data(1024)
+    
+                with l:
+                    shm.buf[:len(test_data)] = test_data
+                    time.sleep(0.1)
+    
+                shm.close()
+    
+            # Запуск процессов
+            processes = []
+            for _ in range(5):
+                p = mp.Process(target=process_work, args=(buffer1.name, lock1))
+                processes.append(p)
+>               p.start()
+
+tests\special\test_synchronization.py:146: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py:121: in start
+    self._popen = self._Popen(self)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\context.py:224: in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\context.py:337: in _Popen
+    return Popen(process_obj)
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\popen_spawn_win32.py:95: in __init__
+    reduction.dump(process_obj, to_child)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+obj = <Process name='Process-1' parent=113336 initial>
+file = <_io.BufferedWriter name=12>, protocol = None
+
+    def dump(obj, file, protocol=None):
+        '''Replacement for pickle.dump() using ForkingPickler.'''
+>       ForkingPickler(file, protocol).dump(obj)
+E       AttributeError: Can't pickle local object 'test_process_synchronization.<locals>.process_work'
+
+..\..\..\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\reduction.py:60: AttributeError
+============================== warnings summary ===============================
+tests\test_utils.py:23
+  C:\Users\Admin\Documents\Dev\websockets_audio_receiver\tests\test_utils.py:23: PytestCollectionWarning: cannot collect test class 'TestWebSocketClient' because it has a __init__ constructor (from: tests/test_utils.py)
+    class TestWebSocketClient:
+
+tests\test_utils.py:23
+  C:\Users\Admin\Documents\Dev\websockets_audio_receiver\tests\test_utils.py:23: PytestCollectionWarning: cannot collect test class 'TestWebSocketClient' because it has a __init__ constructor (from: tests/e2e/test_real_audio.py)
+    class TestWebSocketClient:
+
+tests\test_utils.py:23
+  C:\Users\Admin\Documents\Dev\websockets_audio_receiver\tests\test_utils.py:23: PytestCollectionWarning: cannot collect test class 'TestWebSocketClient' because it has a __init__ constructor (from: tests/integration/test_data_flow.py)
+    class TestWebSocketClient:
+
+tests\test_utils.py:23
+  C:\Users\Admin\Documents\Dev\websockets_audio_receiver\tests\test_utils.py:23: PytestCollectionWarning: cannot collect test class 'TestWebSocketClient' because it has a __init__ constructor (from: tests/load/test_performance.py)
+    class TestWebSocketClient:
+
+tests\test_utils.py:23
+  C:\Users\Admin\Documents\Dev\websockets_audio_receiver\tests\test_utils.py:23: PytestCollectionWarning: cannot collect test class 'TestWebSocketClient' because it has a __init__ constructor (from: tests/security/test_reliability.py)
+    class TestWebSocketClient:
+
+tests\unit\test_audio_receiver.py:183
+  C:\Users\Admin\Documents\Dev\websockets_audio_receiver\tests\unit\test_audio_receiver.py:183: PytestCollectionWarning: cannot collect test class 'TestWebSocketClient' because it has a __init__ constructor (from: tests/unit/test_audio_receiver.py)
+    class TestWebSocketClient:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/e2e/test_real_audio.py::test_real_audio_stream - ConnectionRefus...
+FAILED tests/e2e/test_real_audio.py::test_audio_timing - ConnectionRefusedErr...
+FAILED tests/e2e/test_real_audio.py::test_continuous_audio_stream - Connectio...
+FAILED tests/integration/test_data_flow.py::test_full_data_flow - ConnectionR...
+FAILED tests/integration/test_data_flow.py::test_multi_client_scenario - Conn...
+FAILED tests/integration/test_data_flow.py::test_session_isolation - Connecti...
+FAILED tests/load/test_performance.py::test_throughput - ConnectionRefusedErr...
+FAILED tests/load/test_performance.py::test_buffer_overflow - ConnectionRefus...
+FAILED tests/load/test_performance.py::test_concurrent_load - ConnectionRefus...
+FAILED tests/security/test_reliability.py::test_resource_cleanup - Connection...
+FAILED tests/security/test_reliability.py::test_graceful_shutdown - Connectio...
+FAILED tests/security/test_reliability.py::test_error_recovery - ConnectionRe...
+FAILED tests/security/test_reliability.py::test_session_timeout - ConnectionR...
+FAILED tests/special/test_synchronization.py::test_race_conditions - SystemEx...
+FAILED tests/special/test_synchronization.py::test_buffer_recovery - Failed: ...
+FAILED tests/special/test_synchronization.py::test_process_synchronization - ...
+ERROR tests/unit/test_audio_receiver.py::test_start_audio_receiver_command - ...
+ERROR tests/unit/test_audio_receiver.py::test_invalid_command - SystemExit: 0
+ERROR tests/unit/test_audio_receiver.py::test_binary_data_validation - System...
+======= 16 failed, 5 passed, 6 warnings, 3 errors in 391.95s (0:06:31) ========

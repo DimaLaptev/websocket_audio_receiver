@@ -1,0 +1,21 @@
+from setuptools import setup, find_packages
+
+setup(
+    name="websockets_audio_receiver",
+    version="0.1.0",
+    packages=find_packages(),
+    install_requires=[
+        "fastapi==0.104.1",
+        "uvicorn==0.24.0",
+        "websockets==12.0",
+        "python-multipart==0.0.9",
+        "pydantic==2.6.1",
+        "pytest==7.4.3",
+        "pytest-asyncio==0.21.1",
+        "pytest-cov==4.1.0",
+        "numpy==1.26.3",
+        "psutil==5.9.8",
+        "requests==2.31.0",
+        "aiohttp==3.9.3",
+    ],
+) 
